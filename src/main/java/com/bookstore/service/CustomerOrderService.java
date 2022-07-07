@@ -6,7 +6,13 @@ import com.bookstore.entity.CustomerOrder;
 
 public interface CustomerOrderService {
 
-    List<CustomerOrder> getAllCustomerOrderServices();
+    List<CustomerOrder> getAllCustomerOrders();
 
-    CustomerOrder geCustomerOrderServiceById(Long id);
+    CustomerOrder geCustomerOrderById(Long id);
+
+    Boolean deleteCustomerOrderById(Long id);
+
+    Boolean updateCustomerOrderById(Long id, CustomerOrder customerOrder);
+
+    CustomerOrder creatCustomerOrder(CustomerOrder customerOrder);
 }

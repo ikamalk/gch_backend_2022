@@ -12,7 +12,7 @@ public interface AuthorService {
 
     Boolean deleteAuthorById(Long id);
 
-    String updateAuthorById(Long id, Author author);
+    Boolean updateAuthorById(Long id, Author author);
     
     Author createAuthor(Author author);
 }

@@ -47,11 +47,17 @@ public class AuthorServiceImpl implements AuthorService {
     }
 
     @Override
-    public String updateAuthorById(Long id, Author author) {
+    public Boolean updateAuthorById(Long id, Author author) {
         try {
-            authorRepository.save(author);
-            return "Author updated successfully";
-        } catch(Exception err) {
+            Optional<Author> authorCheck = authorRepository.findById(id);
+
+            if(authorCheck.isPresent()) {
+                authorRepository.save(author);
+                return true;
+            }
+
+            return false;
+        } catch (Exception err) {
             throw new ResponseStatusException(
                 HttpStatus.INTERNAL_SERVER_ERROR,
                 "Author could not update at this time",
@@ -64,7 +70,7 @@ public class AuthorServiceImpl implements AuthorService {
     public Author createAuthor(Author author) {
         try {
             return authorRepository.save(author);
-        } catch(Exception err) {
+        } catch (Exception err) {
             throw new ResponseStatusException(
                 HttpStatus.INTERNAL_SERVER_ERROR,
                 "Author could not create at this time",

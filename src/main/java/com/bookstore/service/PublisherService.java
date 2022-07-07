@@ -9,4 +9,10 @@ public interface PublisherService {
     List<Publisher> getAllPublishers();
 
     Publisher getPublisherById(Long id);
+
+    Boolean deletePublisherById(Long id);
+
+    Boolean updatePublisherById(Long id, Publisher publisher);
+
+    Publisher creatPublisher(Publisher publisher);
 }

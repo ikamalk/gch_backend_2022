@@ -44,7 +44,7 @@ public class AuthorController {
                 .status(HttpStatus.OK)
                 .body(
                     authorServiceImpl.deleteAuthorById((long) id) ? 
-                        "Author Deleted Successfully" : "Author could not be delete at this time"
+                        "Author Deleted Successfully" : "Author not found"
                 );
     }
 
@@ -54,7 +54,12 @@ public class AuthorController {
     public ResponseEntity<String> updateAuthorById(@PathVariable int id, @RequestBody Author author) {
         return ResponseEntity
             .status(HttpStatus.OK)
-            .body(authorServiceImpl.updateAuthorById((long) id, author));
+            .body(
+                authorServiceImpl.updateAuthorById((long) id, author) ?
+                "Author Updated Successfully" 
+                : 
+                "Author Not Found"
+            );
     }
 
     @PostMapping

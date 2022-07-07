@@ -9,4 +9,10 @@ public interface CustomerService {
     List<Customer> getAllCustomers();
 
     Customer getCustomerById(Long id);
+
+    Boolean deleteCustomerById(Long id);
+
+    Boolean updateCustomerById(Long id, Customer customer);
+
+    Customer creatCustomer(Customer customer); 
 }
