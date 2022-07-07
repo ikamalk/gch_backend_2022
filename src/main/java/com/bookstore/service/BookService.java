@@ -1,7 +1,6 @@
 package com.bookstore.service;
 
 import com.bookstore.entity.Book;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
