@@ -9,4 +9,10 @@ public interface AuthorService {
     List<Author> getAllAuthors();
 
     Author getAuthorById(Long id);
+
+    Boolean deleteAuthorById(Long id);
+
+    String updateAuthorById(Long id, Author author);
+    
+    Author createAuthor(Author author);
 }
