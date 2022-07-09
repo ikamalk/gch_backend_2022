@@ -3,5 +3,10 @@ steps:
     entrypoint: 'mvn'
     args: ['clean', 'install', '-DskipTests']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/norse-wavelet-354919/bookstorebackend', '.','-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy']
+    args: ['build', '-t', 'gcr.io/norse-wavelet-354919/bookstorebackend', '.']
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'bash'
+    args: [ '-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy' ]
+  timeout: '1600s'
 images: ['gcr.io/norse-wavelet-354919/bookstorebackend']
+
