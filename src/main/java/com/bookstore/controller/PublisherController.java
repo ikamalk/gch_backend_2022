@@ -19,7 +19,7 @@ import com.bookstore.entity.Publisher;
 import com.bookstore.serviceImpl.PublisherServiceImpl;
 
 @RestController
-@RequestMapping("publisher")
+@RequestMapping("api/v1/publisher")
 public class PublisherController {
 
     @Autowired

@@ -19,7 +19,7 @@ import com.bookstore.entity.Author;
 import com.bookstore.serviceImpl.AuthorServiceImpl;
 
 @RestController
-@RequestMapping("author")
+@RequestMapping("api/v1/author")
 public class AuthorController {
 
     @Autowired

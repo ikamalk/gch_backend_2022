@@ -19,7 +19,7 @@ import com.bookstore.entity.Customer;
 import com.bookstore.serviceImpl.CustomerServiceImpl;
 
 @RestController
-@RequestMapping("customer")
+@RequestMapping("api/v1/customer")
 public class CustomerController {
 
     @Autowired
