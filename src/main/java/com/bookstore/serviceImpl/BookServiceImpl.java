@@ -4,6 +4,8 @@ import com.bookstore.entity.Book;
 import com.bookstore.repository.BookRepository;
 import com.bookstore.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,9 +14,12 @@ import java.util.List;
 public class BookServiceImpl  implements BookService {
     @Autowired
     BookRepository bookRepository;
+
+
+
     @Override
-    public List<Book> findAllBooks() {
-        return bookRepository.findAll();
+    public Page<Book> findAllBooks(Pageable pageable) {
+        return bookRepository.findAll(pageable);
     }
 
     @Override

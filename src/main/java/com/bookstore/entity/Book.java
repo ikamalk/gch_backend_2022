@@ -16,11 +16,15 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String title;
+    private String name;
     private String description;
-    private Long price;
-    private String isbn;
-    private String language;
+    private Long unitPrice;
+    private String sku;
+    private String imageUrl;
+    private Boolean active;
+    private Integer unitsInStock;
+    private String createdOn;
+    private String updatedOn;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "author_id")
     @JsonIgnore
